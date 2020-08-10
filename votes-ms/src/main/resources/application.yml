@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: vote-service
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://mysql-server:3306/vote-service?createDatabaseIfNotExist=true&useSSL=true
+    username: vote
+    password: vote@123
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+  rabbitmq: 
+    host: rabbitmq-server
+    port: 5672
+    username: vote
+    password: vote@123
+    
+rabbitmq: 
+  exchange: vote.exchange
+  routing-key: vote.routing.key
+  queue-name: voteQueue
+
+user:
+  info:
+    url: https://user-info.herokuapp.com/users/%s
